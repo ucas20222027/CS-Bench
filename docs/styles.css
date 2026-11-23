@@ -1,0 +1,150 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #161e2c;
+  background: #f2f5f8;
+  --accent: #134c88;
+  --muted: #506075;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+
+a { color: var(--accent); text-underline-offset: .16em; }
+a:hover { text-decoration-thickness: .12em; }
+:focus-visible { outline: 3px solid #0084ce; outline-offset: 3px; }
+
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #dbe2eb;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(100% - 3rem, 73rem);
+  min-height: 4.25rem;
+  margin: auto;
+}
+
+.wordmark {
+  color: #161e2c;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  text-decoration: none;
+}
+
+nav { display: flex; gap: clamp(.9rem, 3vw, 1.75rem); }
+nav a { color: #34455d; font-size: .94rem; font-weight: 650; }
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  width: min(100% - 3rem, 73rem);
+  margin: clamp(1.5rem, 4.5vw, 3.75rem) auto;
+  background: #fff;
+  border: 1px solid #d9e2ec;
+  border-radius: 1.25rem;
+  box-shadow: 0 12px 40px #152b4a0b;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: calc(1.25rem - 1px) 0 0 calc(1.25rem - 1px);
+  color: #f7fbff;
+  background: linear-gradient(155deg, #102238, #163753);
+}
+
+.journal {
+  margin: 0 0 1rem;
+  color: #a6d9ff;
+  font-size: .875rem;
+  font-weight: 650;
+}
+
+h1, h2 { margin: 0; letter-spacing: -.045em; line-height: 1.12; }
+h1 { font-size: clamp(1.9rem, 4.6vw, 2.8rem); }
+h2 { font-size: clamp(1.9rem, 3.8vw, 2.7rem); }
+
+.dataset-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 0;
+}
+
+.dataset-stats div { padding-top: .75rem; border-top: 1px solid #55718b; }
+.dataset-stats dt { font-size: .875rem; font-weight: 650; }
+.dataset-stats dd { margin: .2rem 0 0; color: #c7deee; font-size: .875rem; }
+.dataset-stats strong { display: block; color: #fff; font-size: 1.45rem; }
+
+figure { margin: 0; }
+figure img { display: block; width: 100%; height: auto; border-radius: .5rem; }
+figcaption { margin-top: .65rem; color: #c7deee; font-size: .875rem; line-height: 1.5; }
+
+.application, .confirmation { padding: clamp(1.5rem, 4vw, 3rem); }
+.intro { max-width: 54ch; margin: .75rem 0 1.75rem; }
+.intro, .confirmation p { color: var(--muted); line-height: 1.6; }
+
+form, .field { display: grid; }
+form { gap: 1rem; }
+.field { gap: .4rem; align-content: start; min-width: 0; }
+.field-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.field-row .field { grid-template-rows: 1fr auto; }
+label { align-self: end; font-size: .9375rem; font-weight: 650; }
+label span { color: var(--muted); font-weight: 400; }
+
+input, select, textarea, button { font: inherit; }
+input, select, textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: .6rem .75rem;
+  color: inherit;
+  background: #fff;
+  border: 1px solid #8b9db1;
+  border-radius: .45rem;
+}
+
+textarea { resize: vertical; }
+::placeholder, select:invalid { color: #5b687a; }
+
+button {
+  justify-self: start;
+  min-height: 2.9rem;
+  margin-top: .25rem;
+  padding: .65rem 1.25rem;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: .45rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover { background: #103d6c; }
+.submission-note { margin: 0; color: var(--muted); font-size: .875rem; line-height: 1.55; }
+
+.confirmation {
+  width: min(100% - 3rem, 42rem);
+  margin: 3rem auto;
+  background: #fff;
+  border: 1px solid #d9e2ec;
+  border-radius: 1rem;
+}
+
+@media (max-width: 53rem) {
+  .layout { grid-template-columns: minmax(0, 1fr); max-width: 41rem; }
+  .overview { grid-row: 2; border-radius: 0 0 calc(1.25rem - 1px) calc(1.25rem - 1px); }
+}
+
+@media (max-width: 34rem) {
+  .layout, .header-inner, .confirmation { width: calc(100% - 1.5rem); }
+  .field-row { grid-template-columns: minmax(0, 1fr); }
+  button { justify-self: stretch; }
+}

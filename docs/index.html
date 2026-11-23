@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Request access to CS-Bench and CS-Bench-Syn, two datasets for C/S-band SAR image matching.">
+  <title>Request Dataset Access | CS-Bench</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="./">CS-Bench</a>
+      <nav aria-label="Project links">
+        <a href="https://doi.org/10.1016/j.rse.2026.115612">Paper</a>
+        <a href="https://github.com/ucas20222027/CS-Bench">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="overview" aria-labelledby="overview-title">
+      <div class="overview-intro">
+        <p class="journal">Remote Sensing of Environment · 2026</p>
+        <h2 id="overview-title">C/S-band SAR<br>image matching</h2>
+        <dl class="dataset-stats">
+          <div>
+            <dt>CS-Bench</dt>
+            <dd><strong>9,000</strong> real pairs</dd>
+          </div>
+          <div>
+            <dt>CS-Bench-Syn</dt>
+            <dd><strong>450,000</strong> synthetic pairs</dd>
+          </div>
+        </dl>
+      </div>
+      <figure>
+        <img src="cs-bench-matching.webp" width="1600" height="1150" alt="C/S-band SAR matching results across urban, rural, plain, hill, and water scenes">
+        <figcaption>Examples of C/S-band SAR image matching from Song et al. (2026).</figcaption>
+      </figure>
+    </aside>
+
+    <section class="application" aria-labelledby="application-title">
+      <h1 id="application-title">Request dataset access</h1>
+      <p class="intro">Tell us about your team and how you plan to use the data. The CS-Bench team will review your request and respond by email.</p>
+
+      <form action="https://formsubmit.co/songmingyang22@mails.ucas.ac.cn" method="post" aria-describedby="submission-note">
+        <input type="hidden" name="_subject" value="CS-Bench dataset access request">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_url" value="https://ucas20222027.github.io/CS-Bench/">
+        <input type="hidden" name="_next" value="https://ucas20222027.github.io/CS-Bench/thanks.html">
+        <div hidden>
+          <input type="text" name="_honey" autocomplete="off" tabindex="-1">
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" autocomplete="name" maxlength="120" required>
+          </div>
+          <div class="field">
+            <label for="email">Contact email</label>
+            <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="institution">Institution or organization</label>
+            <input id="institution" name="Institution" autocomplete="organization" maxlength="200" required>
+          </div>
+          <div class="field">
+            <label for="team">Lab or research group <span>(optional)</span></label>
+            <input id="team" name="Lab or research group" maxlength="200">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="dataset">Requested dataset</label>
+          <select id="dataset" name="Requested dataset" required>
+            <option value="" disabled selected>Select a dataset</option>
+            <option>CS-Bench (9,000 real pairs)</option>
+            <option>CS-Bench-Syn (450,000 synthetic pairs)</option>
+            <option>Both datasets</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="publications">Relevant team publications <span>(optional)</span></label>
+          <textarea id="publications" name="Relevant team publications" rows="2" maxlength="2000" placeholder="Paper titles, DOI links, or a team publications page"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="purpose">Intended use</label>
+          <textarea id="purpose" name="Intended use" rows="3" maxlength="3000" placeholder="Briefly describe your project and how you will use the dataset." required></textarea>
+        </div>
+
+        <button type="submit">Submit request</button>
+        <p class="submission-note" id="submission-note">FormSubmit forwards your responses to the CS-Bench team for review. If you have trouble with the form, <a href="mailto:songmingyang22@mails.ucas.ac.cn?subject=CS-Bench%20dataset%20access%20request&amp;body=Full%20name%3A%0D%0AContact%20email%3A%0D%0AInstitution%20or%20organization%3A%0D%0ALab%20or%20research%20group%20(optional)%3A%0D%0ARequested%20dataset%3A%0D%0ARelevant%20team%20publications%20(optional)%3A%0D%0AIntended%20use%3A">email your request</a>.</p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
